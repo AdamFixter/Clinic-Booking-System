@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C1AD754A-E3E6-400E-8D37-C0F600DB35FA}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AppointmentsBusiness</RootNamespace>
+    <AssemblyName>AppointmentsBusiness</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Antlr3.Runtime.3.5.1\lib\net40-client\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Iesi.Collections, Version=4.0.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Iesi.Collections.4.0.4\lib\net461\Iesi.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate, Version=5.1.0.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\NHibernate.5.1.0\lib\net461\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="Remotion.Linq, Version=2.2.0.0, Culture=neutral, PublicKeyToken=fee00910d6e5f53b, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Remotion.Linq.2.2.0\lib\net45\Remotion.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="Remotion.Linq.EagerFetching, Version=2.2.0.0, Culture=neutral, PublicKeyToken=fee00910d6e5f53b, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Remotion.Linq.EagerFetching.2.2.0\lib\net45\Remotion.Linq.EagerFetching.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AppointmentBusiness.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Core\Core.csproj">
+      <Project>{B609005F-A620-43BE-8BDD-754F2FD0A4EB}</Project>
+      <Name>Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Domain\Domain\Domain.csproj">
+      <Project>{7105973C-47EA-458E-93A7-21755649EF84}</Project>
+      <Name>Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Repositories\AppointmentDurationsRespository\AppointmentDurationsRespository.csproj">
+      <Project>{3AB502D2-4DA0-4F0A-9467-98130F1DEC95}</Project>
+      <Name>AppointmentDurationsRespository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Repositories\AppointmentRepository\AppointmentsRepository.csproj">
+      <Project>{FF6E8C71-D29A-46B9-BBAB-E09E2048F8E6}</Project>
+      <Name>AppointmentsRepository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Repositories\AppointmentTypeRepository\AppointmentTypeRepository.csproj">
+      <Project>{4E83BE49-A6E5-4ACE-B600-8866A6C5C829}</Project>
+      <Name>AppointmentTypeRepository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Repositories\AppointmentUrgencyRepository\AppointmentUrgenciesRepository.csproj">
+      <Project>{8AEC479E-8299-427A-AE17-E442A6631A66}</Project>
+      <Name>AppointmentUrgenciesRepository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Repositories\ClinicsRepository\ClinicsRepository.csproj">
+      <Project>{bbc90b5b-677c-45da-8d66-d4fa23499993}</Project>
+      <Name>ClinicsRepository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Repositories\PatientRepository\PatientsRepository.csproj">
+      <Project>{7a81fc86-9759-4826-a0b9-4fe9f9dd4840}</Project>
+      <Name>PatientsRepository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Repositories\Repository\Repository.csproj">
+      <Project>{0A88BDBF-6C6A-422A-9EB6-5D107412A74B}</Project>
+      <Name>Repository</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
